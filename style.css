@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* 
+--- Colour code ---
+Green: #67b26f;
+Blue: #4ca2cd;
+Mid: #5aaa9d; 
+-------------------
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #444;
+    font-family: sans-serif;
+    padding: 50px;
+    /* this will make the backgorund color gradual shift. ((to which the direction you want the color to be changed), original colour, the colour you want it to be chnaged) */
+    background: linear-gradient(to bottom right, #67b26f,#4ca2cd);
+    height: 100vh;
+
+    /* 
+    display: flex;
+
+    align-items: center; CROSS AXSIS
+    this fixuate the position of the item against vertical (top&down). so nomatter how long you streach the screen, the items stats in the middle 
+
+    justify-content: center ; MAIN AXSIS -> left and right
+
+
+    */
+}
+
+.pizza　{
+    max-width: 800px;
+    border-radius: 4px;
+    /* this defines the shadow you want to cast behind item, [x direction(horizontal)]px [y direction(vertical)]px [amount of blur] [how much blur should come out at the end] rgba */
+    box-shadow: 0 30px 80px 10px rgba(0, 0, 0, .2);
+    overflow: hidden;
+
+    display: flex;
+    /* align-items: center;  this always works against vertical (top&down) axsis */
+    /* align-self: center; this also gets you the same result as just above but im not really sure about the difference */
+    align-items: flex-end;  /* this always works against vertical (top&down) axsis: -end meaning it comes at the bottom, whereas -start means it comes at the top */
+
+}
+
+.pizza__hero {
+    flex: 0 0 45%;
+}
+
+.pizza__img {
+    width: 100%;
+}
+
+.pizza__content {
+    /* flex: grow, shrink, [basis(width)]%. you can also define each element separately */
+    flex: 1;
+    /* flex-grow: 1; this equals eaxactly the same as just above*/
+    background: white;
+}
+
+.pizza__price {
+    flex: 0 1 50px;
+    background: linear-gradient(to bottom, #67b26f,#4ca2cd);
+    color: white;
+    font-size: 18px;
+
+    writing-mode: vertical-rl; /* this allows the font to be written top to down */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
