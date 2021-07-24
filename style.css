@@ -6,6 +6,17 @@ Green: #67b26f;
 Blue: #4ca2cd;
 Mid: #5aaa9d; 
 -------------------
+
+-- Direction Guide -- 
+Cross axis: top to down 
+ > align-items 
+Main axis: left to right
+ > justify content
+---------------------
+
+
+
+
 */
 
 * {
@@ -24,13 +35,9 @@ body {
 
     /* 
     display: flex;
-
     align-items: center; CROSS AXSIS
     this fixuate the position of the item against vertical (top&down). so nomatter how long you streach the screen, the items stats in the middle 
-
     justify-content: center ; MAIN AXSIS -> left and right
-
-
     */
 }
 
@@ -81,5 +88,4 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
