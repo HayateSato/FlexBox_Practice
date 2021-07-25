@@ -12,6 +12,9 @@ Cross axis: top to down
  > align-items 
 Main axis: left to right
  > justify content
+
+ https://qiita.com/natsu_mikan/items/03ab685f96b6af446cb8
+
 ---------------------
 */
 
@@ -37,6 +40,12 @@ body {
     */
 }
 
+/* 
+--- --- --- --- --- --- --- 
+PARENT FLEX BOX
+--- --- --- --- --- --- --- 
+ */
+
 .pizza {
     background-color: grey;
     max-width: 800px;
@@ -55,8 +64,14 @@ body {
     
 }
 
+/* 
+--- --- --- --- --- --- --- 
+CHILD FLEX ITEM 1
+--- --- --- --- --- --- --- 
+ */
+
 .pizza__hero {
-    flex: 0 0 45%;
+    flex: 1 0 35%;
 }
 
 .pizza__img {
@@ -64,24 +79,93 @@ body {
    /* if the img size is too big to fit in the flexbox, you need to re-size it by defining the max-width  */
 }
 
+/* 
+--- --- --- --- --- --- --- 
+CHILD FLEX ITEM 2
+--- --- --- --- --- --- --- 
+ */
+
 .pizza__content {
-    /* flex: grow, shrink, [basis(width)]%. you can also define each element separately */
-    flex: 0 1 20%;
-    /* flex-grow: 1; this equals eaxactly the same as just above*/
-    flex-wrap: wrap;
-    align-content: space-around;
-    background: white;
     display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
-    padding: 35px 30px;
+    flex-basis: 50%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    background-color: white;
+    padding: 2px 10px;
+
+} 
+
+.pizza__title {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
 }
-/* .pizza__content h1 {
-    font-size: 42px;
-} */
+
+.pizza__tag {
+    display: flex;
+    flex-grow: 1;
+    margin-left: 5px;
+    justify-content: center;
+    color: white;
+}
+
+.pizza__tag--1 { background-color:#67b26f; }
+
+.pizza__tag--2 { background-color: #4ca2cd; }
+
+.pizza__description {
+    display: flex;
+    align-items: flex-start;
+}
+
+.pizza__details {
+    display: flex;
+    /* flex-wrap: wrap;  */
+    /*
+    justify-content: space-between; 
+    there is another thing called space-around 
+    which leaves the same gap between the items and from the ight and left from the felxbox rim */
+}
+
+.pizza__detail {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+
+    flex-wrap: wrap;
+    flex: 1 0 20%;
+
+    
+    margin: 0 5px;
+
+    font-size: 22px;
+    font-weight: 700;
+   
+
+    background-color: black;
+}
+
+.emoji {
+    width: 100%;
+    align-items: flex-end;
+    text-transform: uppercase;
+    font-size: 15px;
+
+    background-color: #67b26f;
+}
+
+
+
+
+/* 
+--- --- --- --- --- --- --- 
+CHILD FLEX ITEM 3
+--- --- --- --- --- --- --- 
+ */
 
 .pizza__price {
-    flex: 0 1 10%;
+    flex-grow: 1;
     background: linear-gradient(to bottom, #67b26f,#4ca2cd);
     color: white;
     font-size: 18px;
@@ -90,56 +174,3 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-.pizza__title {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.pizza__heading {
-    font-size: 20px;
-    margin-right: auto;
-    /* flex: 1;   this would mean the same as writing margin-right: auto */
-}
-
-.pizza__tag {
-    font-size: 10px;
-    text-transform: uppercase;
-    color: white;
-    padding: 2px 7px;
-    border-radius: 55%;
-    margin-left: 7px;
-}
-
-.pizza__tag--1 { background-color:#67b26f; }
-
-.pizza__tag--2 { background-color: #4ca2cd; }
-
-/* .pizza__description {
-    font-size: 14px; 
-} */
-
-.pizza__details {
-    display: flex;
-    /*
-    justify-content: space-between; 
-    there is another thing called space-around 
-    which leaves the same gap between the items and from the ight and left from the felxbox rim */
-}
-
-.pizza__detail {
-    /* font-size: 15px; */
-    text-transform: uppercase;
-    margin-right: 20px;
-    font-weight: 700;
-
-    display: flex;
-    align-items: center;
-}
-
-.emoji {
-    /* font-size: 20px; */
-    margin-right: 3px;
-}
-
