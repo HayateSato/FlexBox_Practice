@@ -129,6 +129,8 @@ CHILD FLEX ITEM 2
 }
 
 .pizza__detail {
+
+    padding-left: 10px;
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
